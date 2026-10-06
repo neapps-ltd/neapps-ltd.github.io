@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주식회사 엔이앱스 | NE APPS Ltd.</title>
+<meta name="description" content="주식회사 엔이앱스(NE APPS Ltd.) - 크롤링, 자동화, 웹·앱, AI 개발 외주와 IT 교육">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1a2a;--paper:#f5f6f3;--card:#fff;--line:#dfe2dc;--mut:#5b6573;--ac:#2a57f5;--ok:#19b36b;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.75 "Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;letter-spacing:-.01em}
+.w{max-width:1040px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+header{position:sticky;top:0;z-index:10;background:rgba(245,246,243,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{text-decoration:none;display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.logo b{font:500 17px "IBM Plex Mono",monospace;letter-spacing:.02em}
+.logo b i{font-style:normal;color:var(--ac)}
+.logo small{color:var(--mut);font-size:13px}
+nav{display:flex;gap:22px;overflow-x:auto}
+nav a{text-decoration:none;font-size:14px;color:var(--mut);white-space:nowrap}
+nav a:hover{color:var(--ac)}
+.hero{background:var(--ink);color:#e9edf3;padding:84px 0 88px}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(32px,5.2vw,54px);line-height:1.22;margin:0 0 20px;font-weight:800;letter-spacing:-.03em}
+.hero p{color:#aab5c4;margin:0 0 30px;max-width:460px}
+.btn{display:inline-block;padding:13px 24px;border-radius:6px;background:var(--ac);color:#fff;font:700 15px "Noto Sans KR",sans-serif;border:0;text-decoration:none;cursor:pointer}
+.btn:hover{background:#1f46d0}
+.btn.g{background:none;border:1px solid #3b4a63;color:#e9edf3;margin-left:8px}
+.btn.g:hover{border-color:#8fa3c4;background:none}
+.code{background:#0a121e;border:1px solid #243246;border-radius:10px;font:400 14px/1.8 "IBM Plex Mono",monospace;overflow:hidden}
+.code .bar{display:flex;gap:6px;padding:11px 14px;border-bottom:1px solid #243246;color:#6f7e95;font-size:12px;align-items:center}
+.code .bar span{width:9px;height:9px;border-radius:50%;background:#2b384d}
+.code .bar em{font-style:normal;margin-left:8px}
+.code pre{margin:0;padding:18px 20px;overflow-x:auto;color:#c9d3e2}
+.k{color:#7ea2ff}.s{color:#6fdca5}.c{color:#6f7e95}
+section{padding:72px 0}
+section+section{border-top:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:32px}
+.sh h2{margin:0;font-size:28px;letter-spacing:-.03em}
+.sh span{font:400 13px "IBM Plex Mono",monospace;color:var(--mut)}
+.lead{font-size:18px;max-width:640px;color:#2c3849;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px}
+.box h3{margin:0 0 8px;font-size:20px}
+.box>p{margin:0 0 18px;color:var(--mut);font-size:15px}
+.box ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.box li{padding-left:22px;position:relative;font-size:15px}
+.box li:before{content:"";position:absolute;left:0;top:.7em;width:10px;height:2px;background:var(--ac)}
+.hist{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 0;padding:0;list-style:none}
+.hist li{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:9px 16px;font-weight:500;font-size:15px}
+.note{color:var(--mut);font-size:14px;margin-top:14px}
+form{display:grid;gap:22px;max-width:680px}
+.f{display:grid;gap:7px;font-weight:700;font-size:14px}
+.in{font:400 16px "Noto Sans KR",sans-serif;padding:12px 14px;border:1px solid #c9cec6;border-radius:6px;background:#fff;color:var(--ink);width:100%}
+.in:focus{border-color:var(--ac);outline:none;box-shadow:0 0 0 3px rgba(42,87,245,.15)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chips{border:0;margin:0;padding:0}
+.chips legend{font-weight:700;font-size:14px;margin-bottom:8px;padding:0}
+.chips div{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:8px 18px;border:1px solid #c9cec6;border-radius:99px;background:#fff;font-size:15px;transition:.15s}
+.chips input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips input:focus-visible+span{outline:2px solid var(--ac);outline-offset:2px}
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tbl th,.tbl td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+.tbl th{background:#eceee9;font-size:13px;color:var(--mut);font-weight:500}
+.tbl tr:last-child td{border-bottom:0}
+.tbl a{font-weight:700;text-decoration:none}
+.tbl a:hover{color:var(--ac)}
+.tbl .n{width:70px;color:var(--mut)}.tbl .d{width:120px;color:var(--mut)}
+.nt{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:36px;max-width:780px}
+.nt h3{margin:0 0 6px;font-size:24px;letter-spacing:-.02em}
+.nt .m{color:var(--mut);font-size:14px;padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.nt p{margin:0 0 14px}
+.nt .sg{text-align:right;margin-top:28px;font-weight:500}
+.back{display:inline-block;margin-top:20px;font-weight:700;text-decoration:none;color:var(--ac)}
+.hid{display:none}
+footer{background:var(--ink);color:#9aa8bb;padding:40px 0;font-size:14px}
+footer b{color:#e9edf3}
+@media(max-width:760px){.hero .w{grid-template-columns:1fr}.hero{padding:56px 0}.row{grid-template-columns:1fr}.logo small{display:none}section{padding:52px 0}.nt{padding:24px}.btn.g{margin:10px 0 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="#top"><b>NE<i>APPS</i></b><small>주식회사 엔이앱스</small></a>
+<nav aria-label="주요 메뉴"><a href="#about">회사소개</a><a href="#biz">사업분야</a><a href="#edu">교육 경력</a><a href="#contact">문의</a><a href="#board">공고</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="w">
+<div>
+<h1>필요한 것을 만들고,<br>쓰는 법을 가르칩니다.</h1>
+<p>주식회사 엔이앱스(NE APPS Ltd.)는 크롤링·자동화·웹·앱·AI 개발과 IT 교육을 합니다.</p>
+<a class="btn" href="#contact">문의하기</a><a class="btn g" href="#board">공고 게시판</a>
+</div>
+<div class="code" aria-hidden="true">
+<div class="bar"><span></span><span></span><span></span><em>ne_apps.py</em></div>
+<pre><span class="c"># NE APPS Ltd.</span>
+<span class="k">services</span> = [<span class="s">"크롤링"</span>, <span class="s">"자동화"</span>,
+            <span class="s">"웹"</span>, <span class="s">"앱"</span>, <span class="s">"AI"</span>]
+
+<span class="k">for</span> s <span class="k">in</span> services:
+    build(s)
+
+teach(<span class="s">"기초부터 AI 모델까지"</span>)</pre>
+</div>
+</div></div>
+
+<section id="about"><div class="w">
+<div class="sh"><h2>회사소개</h2><span>About</span></div>
+<p class="lead">개발 외주와 IT 교육을 함께 해 왔습니다. 프로그래밍 기초부터 AI 모델까지, 학교·기관·기업에서 교육을 진행한 경험이 있습니다.</p>
+</div></section>
+
+<section id="biz"><div class="w">
+<div class="sh"><h2>사업분야</h2><span>Business</span></div>
+<div class="grid">
+<div class="box"><h3>개발 외주</h3><p>요구사항 정리부터 개발, 납품까지 진행합니다.</p>
+<ul><li>크롤링</li><li>업무 자동화</li><li>웹사이트 개발</li><li>애플리케이션 개발</li><li>AI 개발</li></ul></div>
+<div class="box"><h3>IT 교육</h3><p>대상과 기간에 맞춰 커리큘럼을 구성합니다.</p>
+<ul><li>프로그래밍 언어 기초</li><li>데이터·자동화 실무</li><li>AI 모델 개발</li><li>장기·단기, 온라인·오프라인 과정</li></ul></div>
+</div>
+</div></section>
+
+<section id="edu"><div class="w">
+<div class="sh"><h2>교육 경력</h2><span>Experience</span></div>
+<p class="lead" style="font-size:16px">다음을 포함한 여러 곳에서 교육을 진행했습니다.</p>
+<ul class="hist"><li>인재개발원</li><li>멀티캠퍼스</li><li>청년취업사관학교</li><li>세종대학교</li><li>삼성디스플레이</li></ul>
+</div></section>
+
+<section id="contact"><div class="w">
+<div class="sh"><h2>문의하기</h2><span>Contact</span></div>
+<form id="qf">
+<label class="f">문의 유형
+<select class="in" id="type"><option>개발 외주</option><option>IT 교육</option><option>기타</option></select></label>
+<fieldset class="chips"><legend>교육 문의 시 선택해 주세요</legend>
+<div>
+<label><input type="checkbox" name="k" value="장기"><span>장기</span></label>
+<label><input type="checkbox" name="k" value="단기"><span>단기</span></label>
+<label><input type="checkbox" name="k" value="기업"><span>기업</span></label>
+<label><input type="checkbox" name="k" value="기관"><span>기관</span></label>
+<label><input type="checkbox" name="k" value="온라인"><span>온라인</span></label>
+<label><input type="checkbox" name="k" value="오프라인"><span>오프라인</span></label>
+</div></fieldset>
+<div class="row">
+<label class="f">이름 / 소속<input class="in" type="text" id="nm" required></label>
+<label class="f">연락처<input class="in" type="tel" id="tel" required></label>
+</div>
+<label class="f">이메일<input class="in" type="email" id="em" required></label>
+<label class="f">문의 내용<textarea class="in" id="msg" rows="5" required></textarea></label>
+<div><button class="btn" type="submit">문의 메일 보내기</button></div>
+</form>
+</div></section>
+
+<section id="board"><div class="w">
+<div class="sh"><h2>공고 게시판</h2><span>Notice</span></div>
+<div id="list"></div>
+<div id="detail" class="hid"></div>
+</div></section>
+</main>
+
+<footer><div class="w">
+<b>주식회사 엔이앱스 (NE APPS Ltd.)</b><br>
+대표자 [성명] · 사업자등록번호 [000-00-00000]<br>
+[본점 주소] · [전화번호] · [이메일]
+</div></footer>
+
+<script>
+/* ===== 설정 ===== */
+var EMAIL = "your@email.com"; // 문의 메일 수신 주소
+
+/* 공고 추가: 아래 배열 맨 앞에 객체를 추가하면 게시판에 자동 반영됩니다. */
+var NOTICES = [
+ {
+  id: 1,
+  title: "해산 및 채권자 최고 공고",
+  date: "2026-00-00",
+  period: "2026년 00월 00일 ~ 2026년 00월 00일",
+  body: [
+   "본 회사는 2026년 00월 00일 주주총회의 결의로 해산하였으므로, 상법 제535조에 따라 다음과 같이 공고합니다.",
+   "회사에 대하여 채권이 있는 채권자는 본 공고 게시일부터 2개월 이내에 그 채권을 신고하여 주시기 바랍니다. 위 기간 내에 신고하지 않으면 청산에서 제외됩니다. 다만 회사가 알고 있는 채권자는 청산에서 제외하지 않습니다.",
+   "채권 신고처: [주소] / 연락처: [전화번호], [이메일]"
+  ],
+  sign: ["2026년 00월 00일", "주식회사 엔이앱스", "청산인 [성명]"]
+ }
+];
+
+/* ===== 게시판 ===== */
+var L = document.getElementById("list"), D = document.getElementById("detail");
+function el(t, c, x){ var e = document.createElement(t); if(c) e.className = c; if(x != null) e.textContent = x; return e; }
+function renderList(){
+ var t = el("table","tbl"), h = el("thead"), r = el("tr");
+ [["번호","n"],["제목",""],["게시일","d"]].forEach(function(c){ var th = el("th",c[1],c[0]); r.appendChild(th); });
+ h.appendChild(r); t.appendChild(h);
+ var b = el("tbody");
+ NOTICES.forEach(function(n, i){
+  var tr = el("tr");
+  tr.appendChild(el("td","n",NOTICES.length - i));
+  var td = el("td"), a = el("a",null,n.title); a.href = "#notice-" + n.id; td.appendChild(a); tr.appendChild(td);
+  tr.appendChild(el("td","d",n.date)); b.appendChild(tr);
+ });
+ t.appendChild(b); L.innerHTML = ""; L.appendChild(t);
+}
+function renderDetail(n){
+ D.innerHTML = "";
+ var box = el("article","nt");
+ box.appendChild(el("h3",null,n.title));
+ box.appendChild(el("div","m","게시일 " + n.date + " · 게시기간 " + n.period));
+ n.body.forEach(function(p){ box.appendChild(el("p",null,p)); });
+ var s = el("p","sg"); s.innerHTML = n.sign.join("<br>"); box.appendChild(s);
+ D.appendChild(box);
+ var back = el("a","back","← 목록으로"); back.href = "#board"; D.appendChild(back);
+}
+function route(){
+ var m = location.hash.match(/^#notice-(\d+)$/), n = m && NOTICES.filter(function(x){ return x.id == m[1]; })[0];
+ if(n){ renderDetail(n); L.classList.add("hid"); D.classList.remove("hid"); document.getElementById("board").scrollIntoView(); }
+ else { D.classList.add("hid"); L.classList.remove("hid"); }
+}
+renderList(); route(); window.addEventListener("hashchange", route);
+
+/* ===== 문의 ===== */
+document.getElementById("qf").onsubmit = function(e){
+ e.preventDefault();
+ var k = [].map.call(document.querySelectorAll("input[name=k]:checked"), function(x){ return x.value; }).join(", ") || "선택 없음";
+ var body = "유형: " + type.value + "\n교육 조건: " + k + "\n이름/소속: " + nm.value + "\n연락처: " + tel.value + "\n이메일: " + em.value + "\n\n" + msg.value;
+ location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("[홈페이지 문의] " + type.value) + "&body=" + encodeURIComponent(body);
+};
+</script>
+</body>
+</html>
