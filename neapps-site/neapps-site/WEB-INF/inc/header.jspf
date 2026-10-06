@@ -1,0 +1,28 @@
+<%
+ String ctx = request.getContextPath();
+ if (pageTitle == null) pageTitle = CO_KO;
+ if (active == null) active = "";
+%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= esc(pageTitle) %> | <%= esc(CO_KO) %> (<%= esc(CO_EN) %>)</title>
+<meta name="description" content="<%= esc(CO_KO) %>(<%= esc(CO_EN) %>) - 크롤링, 자동화, 웹·앱, AI 개발 외주와 IT 교육">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="<%= ctx %>/css/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a class="logo" href="<%= ctx %>/index.jsp"><b>NE<i>APPS</i></b><small><%= esc(CO_KO) %></small></a>
+ <nav class="gnb" aria-label="주요 메뉴">
+  <a href="<%= ctx %>/index.jsp#about">회사소개</a>
+  <a href="<%= ctx %>/index.jsp#biz">사업분야</a>
+  <a href="<%= ctx %>/index.jsp#edu">교육 경력</a>
+  <a href="<%= ctx %>/index.jsp#contact">문의</a>
+  <a href="<%= ctx %>/notice.jsp"<%= "notice".equals(active) ? " aria-current=\"page\"" : "" %>>공고</a>
+ </nav>
+</div></header>
