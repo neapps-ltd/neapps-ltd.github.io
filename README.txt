@@ -1,17 +1,13 @@
-NE APPS Ltd. 홈페이지 (JSP)
+NE APPS Ltd. 정적 홈페이지 (GitHub Pages용)
 
-[구조]
-index.jsp            메인 페이지
-notice.jsp           공고 게시판 (목록 / ?id=번호 로 상세)
-css/style.css        디자인
-js/main.js           문의 폼(메일 작성 창 연결)
-WEB-INF/inc/site.jspf     회사 정보, 공고 데이터  <- 주로 여기만 수정
-WEB-INF/inc/header.jspf   공통 헤더
-WEB-INF/inc/footer.jspf   공통 푸터
+[파일] index.html, notice.html, style.css, site.js, main.js  (모두 같은 위치에 올리기)
+[수정] 회사 정보, 이메일, 공고, 문의 전송 설정은 site.js 한 파일에서 고칩니다.
+[공고 주소] https://사용자명.github.io/notice.html?id=1
 
-[배포] JSP를 지원하는 서버(Tomcat 등)의 웹 루트(예: webapps/ROOT)에 폴더 내용을 그대로 복사
-
-[수정]
-- 회사 정보, 이메일: site.jspf 상단 상수
-- 공고 추가: site.jspf 의 NOTICES 맨 위에 항목 추가 (번호는 중복 불가)
-- 공고 직접 링크: https://도메인/notice.jsp?id=1
+[문의 폼이 실제로 메일을 보내게 하려면]
+정적 사이트는 스스로 메일을 보낼 수 없어 외부 폼 서비스가 필요합니다.
+A) Formspree: 가입 -> New Form -> 받을 이메일 입력 -> 발급된 주소를 site.js 의
+   form.endpoint 에 입력 (extra 는 {} 그대로)
+B) Web3Forms: 이메일 입력 -> 받은 Access Key 를 site.js 의
+   form: { endpoint: "https://api.web3forms.com/submit", extra: { access_key: "키" } }
+endpoint 를 비워 두면 메일 작성 창이 열리는 방식으로 동작합니다.
